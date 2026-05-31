@@ -518,7 +518,7 @@ export default class UI {
 
     const fullText = lines.join("\n");
 
-    const typeSound = new Audio(`${import.meta.env.BASE_URL}assets/audio/typewriter.wav`);
+    const typeSound = new Audio("/assets/audio/typewriter.wav");
     typeSound.volume = 0.35;
 
     intro.style.display = "flex";

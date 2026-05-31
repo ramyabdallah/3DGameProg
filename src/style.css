@@ -201,7 +201,7 @@ canvas {
       rgba(0, 0, 0, 0.72),
       rgba(0, 0, 0, 0.82)
     ),
-    url("/3DGameProg/assets/main_menu.png");
+    url("/assets/main_menu.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

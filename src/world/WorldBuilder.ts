@@ -114,7 +114,7 @@ export default class WorldBuilder {
     moon.position = new Vector3(0, 220, 120);
 
     const moonMaterial = new StandardMaterial("moonMaterial", this.scene);
-    const moonTexture = new Texture(`${import.meta.env.BASE_URL}assets/textures/moon.png`, this.scene);
+    const moonTexture = new Texture("/assets/textures/moon.png", this.scene);
     moonTexture.level = 15;
 
     moonMaterial.diffuseTexture = moonTexture;
@@ -143,7 +143,7 @@ export default class WorldBuilder {
     terrainMaterial.emissiveColor = new Color3(0.01, 0.015, 0.02);
     terrainMaterial.specularColor = new Color3(0, 0, 0);
 
-    const causticsTexture = new Texture(`${import.meta.env.BASE_URL}assets/textures/caustics.png`, this.scene);
+    const causticsTexture = new Texture("/assets/textures/caustics.png", this.scene);
     causticsTexture.uScale = 4;
     causticsTexture.vScale = 4;
 
@@ -202,7 +202,7 @@ export default class WorldBuilder {
 
   private createBubbles(): void {
     const bubbles = new ParticleSystem("bubbles", 5000, this.scene);
-    bubbles.particleTexture = new Texture(`${import.meta.env.BASE_URL}assets/textures/bubbles.png`, this.scene);
+    bubbles.particleTexture = new Texture("/assets/textures/bubbles.png", this.scene);
     bubbles.emitter = new Vector3(0, 2, 0);
     bubbles.minEmitBox = new Vector3(-80, -10, -80);
     bubbles.maxEmitBox = new Vector3(80, 20, 80);
