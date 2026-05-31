@@ -12,34 +12,34 @@ export default class AudioManager {
   private menuMusicAudio?: HTMLAudioElement;
 
   setup(): void {
-    this.baseAmbienceAudio = new Audio("/assets/audio/base_music.mp3");
+    this.baseAmbienceAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/base_music.mp3`);
     this.baseAmbienceAudio.volume = 0.35;
     this.baseAmbienceAudio.loop = true;
 
-    this.artifactEscalationAudio = new Audio("/assets/audio/escalation_music.mp3");
+    this.artifactEscalationAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/escalation_music.mp3`);
     this.artifactEscalationAudio.volume = 0.8;
     this.artifactEscalationAudio.loop = false;
 
-    this.creatureChaseAudio = new Audio("/assets/audio/chase_music.mp3");
+    this.creatureChaseAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/chase_music.mp3`);
     this.creatureChaseAudio.volume = 0.8;
     this.creatureChaseAudio.loop = true;
 
-    this.mawRoarAudio = new Audio("/assets/audio/chase_roar.mp3");
+    this.mawRoarAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/chase_roar.mp3`);
     this.mawRoarAudio.volume = 1.0;
 
-    this.mawLowRoarAudio = new Audio("/assets/audio/low_roar.mp3");
+    this.mawLowRoarAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/low_roar.mp3`);
     this.mawLowRoarAudio.volume = 1.0;
 
-    this.doorAudio = new Audio("/assets/audio/door.mp3");
+    this.doorAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/door.mp3`);
     this.doorAudio.volume = 0.7;
 
-    this.artifactPickupAudio = new Audio("/assets/audio/artifact_pickup.mp3");
+    this.artifactPickupAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/artifact_pickup.mp3`);
     this.artifactPickupAudio.volume = 0.8;
 
-    this.buttonClickAudio = new Audio("/assets/audio/button_click.mp3");
+    this.buttonClickAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/button_click.mp3`);
     this.buttonClickAudio.volume = 0.5;
 
-    this.menuMusicAudio = new Audio("/assets/audio/main_menu_music.mp3");
+    this.menuMusicAudio = new Audio(`${import.meta.env.BASE_URL}assets/audio/main_menu_music.mp3`);
     this.menuMusicAudio.volume = 0.5;
     this.menuMusicAudio.loop = true;
   }

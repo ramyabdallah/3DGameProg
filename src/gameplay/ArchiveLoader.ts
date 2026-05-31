@@ -33,7 +33,7 @@ export default class ArchiveLoader {
 
   async load(): Promise<void> {
     try {
-      const result = await ImportMeshAsync("/assets/models/archive.glb", this.scene);
+      const result = await ImportMeshAsync(`${import.meta.env.BASE_URL}assets/models/archive.glb`, this.scene);
 
       result.animationGroups.forEach((animationGroup) => {
         animationGroup.stop();
