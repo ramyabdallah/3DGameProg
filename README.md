@@ -6,7 +6,7 @@ Projet réalisé pour le module **3D Game Programming** à l’Université Côte
 
 Code source : (https://github.com/ramyabdallah/3DGameProg.git)
 Lien Youtube: https://youtu.be/UlV6IEJEAO4
-Jeu hébergé: 
+Jeu hébergé: https://drowned-archive.netlify.app/
 
 ---
 
@@ -276,7 +276,6 @@ Concernant le Batiment:
 
 # Fichiers principaux
 
-```txt
 public/
  └── assets/ 
  ├── audio/ → musiques, sons de portes, rugissements du Maw 
