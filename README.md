@@ -276,6 +276,7 @@ Concernant le Batiment:
 
 # Fichiers principaux
 
+```txt
 public/
  └── assets/ 
  ├── audio/ → musiques, sons de portes, rugissements du Maw 
