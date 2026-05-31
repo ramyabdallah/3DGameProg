@@ -4,9 +4,9 @@
 Jeu d’horreur psychologique sous-marin en 3D développé avec Babylon.js.  
 Projet réalisé pour le module **3D Game Programming** à l’Université Côte d’Azur.
 
-Code source : (https://github.com/ramyabdallah/3DGameProg.git)
-Lien Youtube: https://youtu.be/UlV6IEJEAO4
-Jeu hébergé: https://drowned-archive.netlify.app/
+- Code source : (https://github.com/ramyabdallah/3DGameProg.git)
+- Lien Youtube: https://youtu.be/UlV6IEJEAO4
+- Jeu hébergé: https://drowned-archive.netlify.app/
 
 ---
 
