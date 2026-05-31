@@ -5,6 +5,8 @@ Jeu d’horreur psychologique sous-marin en 3D développé avec Babylon.js.
 Projet réalisé pour le module **3D Game Programming** à l’Université Côte d’Azur.
 
 Code source : (https://github.com/ramyabdallah/3DGameProg.git)
+Lien Youtube: https://youtu.be/UlV6IEJEAO4
+Jeu hébergé: 
 
 ---
 
@@ -65,6 +67,7 @@ Le jeu se joue :
 - au clavier + souris,
 - sans manette,
 - sur ordinateur portable ou PC fixe.
+- avec un casque ou des écouteurs fortement recommandés pour profiter pleinement de l’ambiance sonore et des effets d’horreur.
 
 Compatible AZERTY et QWERTY.
 
@@ -120,6 +123,24 @@ Le jeu contient :
 - écran de défaite,
 - système d’objectifs dynamique.
 
+### Narration et mise en scène
+Le jeu contient :
+- une introduction narrative avec effet machine à écrire,
+- une musique spécifique au menu principal,
+- des transitions cinématiques,
+- des écrans de fin sous forme d'articles de journal.
+
+---
+
+# Respect du Thème IA
+
+# Respect du thème
+
+Le thème IA a est interprété par le mouvement du monstre "The Drowned Maw". Il poursuit le joueur à travers le deuxième niveau du batîment
+à l'aide d'un système de waypoints et de collisions. En détectant la position du joueur, le monstre prend le plus court chemin de la 
+position de son waypoint, jusqu'à celui le plus proche du joueur, ce qui permet une poursuite intense sans arrêt de l'arrivée du joueur à 
+cet étage, jusqu'à la fin du jeu.
+
 ---
 
 # Défis et décisions
@@ -150,8 +171,6 @@ La solution finale utilise :
 - des collisions environnementales,
 - une adaptation dynamique de la hauteur.
 
-Malgré cela, il existe des cas où le monstre ce bloque dans certains cas, ou il traverse le sol directement
-
 ---
 
 ## Audio
@@ -167,12 +186,19 @@ Les transitions audio changent selon :
 - l’état du monstre,
 - les phases du gameplay.
 
+Il existe aussi des effets sonores et de l'ambiance audio pour:
+- le ramassement des artefacts,
+- L'ouvrage et fermeture des portes,
+- la page principale,
+- l'écriture de texte dans l'introduction,
+- le clic des boutons.
+
 ---
 
 ## Gestion des collisions
 
 Le projet utilise les collisions Babylon.js pour :
-- empêcher le joueur et le monstre de traverser les murs,
+- empêcher le joueur et le monstre de traverser les murs et le sol,
 - gérer les déplacements dans les escaliers,
 - empêcher les sorties hors de la map.
 
@@ -185,23 +211,52 @@ L’interface du jeu a été entièrement développée en HTML/CSS :
 - objectifs dynamiques,
 - menus,
 - effets de poursuite,
-- animations d’alerte.
+- animations d’alerte,
+- introduction,
+- fenêtre de fin de jeu.
 
 ---
 
-## Galère mémorable
+## Histoire de développement
+
+# Histoire du développement
+
+Le projet a commencé par une simple idée d'exploration sous-marine. Les premiers prototypes contenaient uniquement le terrain, une caméra libre et quelques objets de test.
+
+Une grande partie du développement a ensuite été consacrée à la modélisation du bâtiment principal sur Blender. Cette étape a représenté l'un des plus gros investissements en temps du projet.
+
+Le Drowned Maw a également demandé plusieurs itérations. Le comportement initial consistait simplement à suivre directement le joueur, ce qui provoquait de nombreux blocages dans l'environnement. Le système final utilise un réseau de waypoints permettant une poursuite plus crédible dans les couloirs de l'archive.
+
+Au fil du développement, plusieurs systèmes ont été ajoutés :
+
+- gestion de l'oxygène,
+- collecte d'artefacts,
+- système audio dynamique,
+- menus interactifs,
+- séquences d'introduction et de fin,
+- poursuite du monstre,
+- effets visuels d'ambiance.
+
+Le résultat final est une expérience d'exploration horrifique centrée sur l'atmosphère, la tension progressive et la découverte.
+
+
+---
+
+## difficultés mémorables
 
 Concernant le monstre:
 
 - il traversait les murs,
 - restait bloqué dans les étagères,
 - ou passait à travers les étages.
+- Une prise de temps trop large pour effectuer de l'animation pour le mouvement du monstre.
 
 Le système de waypoints et les collisions ont dû être entièrement repensés plusieurs fois avant d’obtenir un comportement stable.
 
+
 Concernant le Batiment:
 
-Galère immense sur la modélisation du bâtiment et le reste des modèles sur Blender.
+- Galère immense sur la modélisation du bâtiment et le reste des modèles sur Blender.
 
 ---
 

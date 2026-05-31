@@ -96,7 +96,7 @@ canvas {
 #end-screen {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.96);
+  background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,21 +118,6 @@ canvas {
     0 0 12px #ff0000,
     0 0 30px #5c0000;
   margin-bottom: 40px;
-}
-
-#restart-button {
-  padding: 14px 34px;
-  font-size: 22px;
-  border: 1px solid #8b0000;
-  border-radius: 12px;
-  background: rgba(40, 0, 0, 0.85);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 16px rgba(255, 0, 0, 0.35);
-}
-
-#restart-button:hover {
-  background: rgba(90, 0, 0, 0.95);
 }
 
 #crosshair {
@@ -183,26 +168,6 @@ canvas {
   to {
     opacity: 0.85;
   }
-}
-
-#escapeObjectiveBig {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: red;
-  font-size: 96px;
-  font-weight: bold;
-  z-index: 100;
-  text-shadow: 0 0 20px red;
-  pointer-events: none;
-  transition: all 1.5s ease-in-out;
-}
-
-#escapeObjectiveBig.shrinkObjective {
-  transform: translate(38vw, -42vh) scale(0.25);
-  opacity: 0;
 }
 
 #chaseText {
@@ -378,24 +343,6 @@ canvas {
   background: rgba(170, 0, 0, 0.95);
 }
 
-#mainMenuContent::-webkit-scrollbar {
-  width: 10px;
-}
-
-#mainMenuContent::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.45);
-}
-
-#mainMenuContent::-webkit-scrollbar-thumb {
-  background: rgba(120, 0, 0, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-}
-
-#mainMenuContent::-webkit-scrollbar-thumb:hover {
-  background: rgba(170, 0, 0, 0.95);
-}
-
 .menuBackArrow {
   position: absolute;
   top: 35px;
@@ -534,4 +481,278 @@ canvas {
   box-shadow:
     0 0 20px rgba(255, 0, 0, 0.4),
     inset 0 0 18px rgba(100, 0, 0, 0.7);
+}
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at center, rgba(0, 40, 55, 0.35), rgba(0, 0, 0, 0.98)),
+    black;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+  pointer-events: auto;
+}
+
+#loading-title {
+  font-family: "Times New Roman", serif;
+  font-size: 46px;
+  letter-spacing: 7px;
+  color: #8f1414;
+  text-shadow:
+    0 0 12px rgba(255, 0, 0, 0.45),
+    0 0 28px rgba(80, 0, 0, 0.9);
+  margin-bottom: 30px;
+}
+
+#loading-text {
+  font-family: "Times New Roman", serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: rgba(220, 240, 245, 0.85);
+  margin-bottom: 28px;
+}
+
+#loading-spinner {
+  width: 54px;
+  height: 54px;
+  border: 3px solid rgba(120, 180, 200, 0.2);
+  border-top: 3px solid rgba(170, 230, 255, 0.9);
+  border-radius: 50%;
+  animation: loadingSpin 1.1s linear infinite;
+  box-shadow: 0 0 16px rgba(80, 180, 220, 0.35);
+}
+
+@keyframes loadingSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#screen-fade {
+  position: fixed;
+  inset: 0;
+  z-index: 450;
+  display: none;
+  background: black;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  opacity: 1;
+  transition: opacity 1.2s ease;
+  pointer-events: auto;
+}
+
+#intro-text {
+  width: min(82vw, 900px);
+  max-height: 78vh;
+  overflow: hidden;
+  white-space: pre-line;
+  font-family:
+    "Courier New",
+    "Lucida Console",
+    "American Typewriter",
+    monospace;
+  font-size: clamp(18px, 2.2vw, 30px);
+  line-height: 1.6;
+  letter-spacing: 1.2px;
+  color: rgba(230, 230, 220, 0.92);
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.08);
+  user-select: none;
+}
+
+#intro-skip-button {
+  position: fixed;
+  right: 38px;
+  bottom: 32px;
+  width: 72px;
+  height: 52px;
+  z-index: 650;
+  font-family: "Times New Roman", serif;
+  font-size: 38px;
+  line-height: 1;
+  color: #d6c1c1;
+  background: rgba(20, 0, 0, 0.75);
+  border: 1px solid rgba(130, 20, 20, 0.8);
+  cursor: pointer;
+  box-shadow:
+    0 0 12px rgba(120, 0, 0, 0.35),
+    inset 0 0 12px rgba(60, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+#intro-skip-button:hover {
+  background: rgba(60, 0, 0, 0.9);
+  color: white;
+  transform: scale(1.08);
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.4),
+    inset 0 0 18px rgba(100, 0, 0, 0.7);
+}
+
+.endTitleFadeOut {
+  animation: endTitleFadeOutAnim 1.2s ease forwards;
+}
+
+@keyframes endTitleFadeOutAnim {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+#newspaper-page {
+  width: min(82vw, 760px);
+  max-height: 72vh;
+  overflow: hidden;
+  padding: 34px 42px;
+  background:
+    linear-gradient(
+      rgba(255, 245, 210, 0.92),
+      rgba(220, 205, 165, 0.95)
+    );
+  color: #1a130d;
+  border: 2px solid rgba(30, 20, 10, 0.7);
+  box-shadow:
+    0 0 45px rgba(0, 0, 0, 0.8),
+    inset 0 0 40px rgba(90, 60, 30, 0.25);
+  font-family: Georgia, "Times New Roman", serif;
+  transform: rotate(-1deg) scale(0.9);
+  opacity: 0;
+}
+
+.newspaperAppear {
+  animation: newspaperAppearAnim 1.1s ease forwards;
+}
+
+@keyframes newspaperAppearAnim {
+  from {
+    opacity: 0;
+    transform: rotate(-2deg) scale(0.85) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-1deg) scale(1) translateY(0);
+  }
+}
+
+#newspaper-name {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: bold;
+  letter-spacing: 4px;
+  border-bottom: 3px double #1a130d;
+  padding-bottom: 8px;
+}
+
+#newspaper-date {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 22px;
+  letter-spacing: 2px;
+}
+
+#newspaper-headline {
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.05;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+#newspaper-subtitle {
+  font-size: clamp(16px, 2vw, 22px);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(30, 20, 10, 0.45);
+  padding-bottom: 16px;
+}
+
+#newspaper-body {
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.55;
+  text-align: justify;
+  column-count: 2;
+  column-gap: 30px;
+}
+
+#newspaper-body p {
+  margin-top: 0;
+}
+
+#end-buttons.hidden {
+  display: none;
+}
+
+#end-buttons {
+  margin-top: 28px;
+}
+
+.newspaperButtonsAppear {
+  animation: newspaperButtonsAppearAnim 1s ease forwards;
+}
+
+@keyframes newspaperButtonsAppearAnim {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#maw-death-fade {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: none;
+  background: black;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+  pointer-events: auto;
+}
+
+.endTitleFadeIn {
+  animation: endTitleFadeInAnim 1.8s ease forwards;
+}
+
+@keyframes endTitleFadeInAnim {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
