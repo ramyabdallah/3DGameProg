@@ -278,14 +278,31 @@ Concernant le Batiment:
 
 ```txt
 public/
-└── assets/
-    ├── audio/
-    ├── models/
-    ├── textures/
-    └── main_menu.png
+ └── assets/ 
+ ├── audio/ → musiques, sons de portes, rugissements du Maw 
+ ├── models/ → archive.glb, modèles 3D du jeu 
+ ├── textures/ → textures et matériaux 
+ └── main_menu.png → arrière-plan du menu principal
 
 src/
-├── app.ts        → moteur principal du jeu
-├── main.ts       → lancement du jeu
-├── ui.ts         → interface utilisateur et menus
-└── style.css     → style graphique et HUD
+ ├── main.ts → point d'entrée du jeu 
+ ├── app.ts → moteur du jeu 
+ ├── style.css → style graphique et HUD 
+ ├── gameplay/
+ │ ├── ArchiveLoader.ts → chargement de l'archive, des modèles et des animations 
+ │ ├── DoorSystem.ts → gestion des portes interactives et de leurs animations 
+ │ ├── EscapeSystem.ts → gestion de la victoire et de la sortie de l'archive 
+ │ ├── ArtifactSystem.ts → collecte et suivi des artefacts 
+ │ └── OxygenSystem.ts → gestion de l'oxygène du joueur 
+ ├── audio/ 
+ │ ├── AudioManager.ts → gestion des musiques et effets sonores 
+ ├── ui → interface utilisateur et menus 
+ └── types/ 
+ │ ├── GameTypes.ts → types et structures de données partagés 
+ ├── world/ 
+ │ ├── WorldBuilder.ts → création et configuration de l'environnement 3D 
+ ├── player/ 
+ │ ├── PlayerController.ts → contrôles du joueur, caméra, déplacements et interactions 
+ ├── monster/ 
+ ├── MonsterController.ts → IA du Drowned Maw, pathfinding, poursuite et capture du joueur 
+ ├── MonsterWaypoints.ts → définition des points de passage et connexions du pathfinding
